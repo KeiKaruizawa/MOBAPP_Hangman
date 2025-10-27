@@ -110,7 +110,6 @@
             Margin="0,95,0,0"
             ZIndex="10"
             IsVisible="{Binding IsWinVisible}"/> 
-        
 
         <ScrollView 
             Grid.Row="2"
@@ -148,16 +147,14 @@
             </FlexLayout>
         </ScrollView>
 
-
         <VerticalStackLayout
         Grid.Row="2"
         Grid.ColumnSpan="3"
         IsVisible="{Binding IsWinVisible}"  
         HorizontalOptions="Center"
         VerticalOptions="Center" 
-            
         Spacing="10"
-        Margin="0,20,0,60">   <!--how to change font size and font family-->
+        Margin="0,20,0,60"> 
 
             <Button
             Text="NEXT"
