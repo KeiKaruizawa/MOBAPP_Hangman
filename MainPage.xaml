@@ -12,19 +12,35 @@
             Aspect="AspectFill"
             HorizontalOptions="Center" />
 
-        <Label
+        <!--<Label
             Grid.Row="3"
             x:Name="Play"
             Text="Play"
+            TextColor="white"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="40"
-            FontFamily="Inter" >
+            FontFamily="Halloween" >
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="PlayTapped" />
             </Label.GestureRecognizers>
-        </Label>
+        </Label>-->
 
+        <Button
+            Grid.Row="2"
+            x:Name="PlayButton"
+            Text="PLAY"
+            TextColor="#ED3251"
+            BackgroundColor="LightGray"
+            BorderColor="White"
+            FontSize="35"
+            Padding="15, 10, 15, 10"
+            Margin="0, 0, 0, 100"
+            CharacterSpacing="1"
+            FontFamily="Halloween"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="PlayButton_Clicked" />
     </Grid>
     
 </ContentPage>

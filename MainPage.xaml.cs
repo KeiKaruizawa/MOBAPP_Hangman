@@ -9,12 +9,14 @@
             InitializeComponent();
         }
 
-        private async void PlayTapped(object sender, EventArgs e)
+        //private async void PlayTapped(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new Game());
+        //}
+
+        private async void PlayButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Game());
         }
-
-
     }
-
 }

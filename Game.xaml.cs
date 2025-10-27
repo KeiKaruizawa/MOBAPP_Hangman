@@ -289,7 +289,7 @@ using System.ComponentModel;
                 IsNextVisible = true;
                 IsExitVisible = true;
                 IsRetryVisible = false;
-                Message = "You Win!";
+                Message = "YOU WIN!";
             }
         }
 
