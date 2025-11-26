@@ -38,6 +38,17 @@ using System.ComponentModel;
             }
         }
 
+    private string categoryText;
+    public string CategoryText
+    {
+        get => categoryText;
+        set
+        {
+            categoryText = value;
+            OnPropertyChanged();
+        }
+    }
+
     public string Message 
         { 
             get => message;
@@ -154,6 +165,7 @@ using System.ComponentModel;
         private string Answer = "";
         private string Hint = "";
         private string spotlight;
+        private string selectedCategory = "";
         int Mistakes = 0;
         List<char> guessed = new List<char>();
         private string gameStatus;
@@ -162,12 +174,12 @@ using System.ComponentModel;
 
     #endregion
 
-    public Game()
+    public Game(string Category)
         {
             InitializeComponent();
             AllLetters.AddRange("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
-
+        selectedCategory = Category;
         BindingContext = this;
             _ = LoadWordsAsync();
 
@@ -177,7 +189,9 @@ using System.ComponentModel;
         {
             try
             {
-                using var stream = await FileSystem.OpenAppPackageFileAsync("hangman_words/words.txt");
+                string fileName = $"hangman_words/{selectedCategory}.txt";
+
+                using var stream = await FileSystem.OpenAppPackageFileAsync(fileName);
                 using var reader = new StreamReader(stream, System.Text.Encoding.UTF8, true);
                 var content = await reader.ReadToEndAsync();
                 content = content.Replace("\uFEFF", "").Replace("\u200B", "").Trim();
@@ -232,7 +246,9 @@ using System.ComponentModel;
                 .ToArray();
             Spotlight = string.Join(' ', temp);
             HintText = $"Hint: {Hint}";
-        }
+
+           CategoryText = $"Category: {char.ToUpper(selectedCategory[0]) + selectedCategory.Substring(1)}";
+    }
 
     public event PropertyChangedEventHandler PropertyChanged;
 

@@ -12,20 +12,6 @@
             Aspect="AspectFill"
             HorizontalOptions="Center" />
 
-        <!--<Label
-            Grid.Row="3"
-            x:Name="Play"
-            Text="Play"
-            TextColor="white"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            FontSize="40"
-            FontFamily="Halloween" >
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="PlayTapped" />
-            </Label.GestureRecognizers>
-        </Label>-->
-
         <Button
             Grid.Row="2"
             x:Name="PlayButton"
@@ -41,6 +27,97 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"
             Clicked="PlayButton_Clicked" />
+
+        <VerticalStackLayout
+            x:Name="CategorySelection"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            IsVisible="False"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Spacing="15"
+            Margin="0, 0, 0, 50">
+
+            <Label
+                Text="SELECT CATEGORY"
+                FontAttributes="Bold"
+                TextColor="White"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Margin="0, 30, 0, 20"/>
+
+            <!-- Halloween Button -->
+            <Button
+                Text="HALLOWEEN"
+                BackgroundColor="#FF6B35"
+                TextColor="White"
+                FontSize="22"
+                WidthRequest="200"
+                HeightRequest="50"
+                CornerRadius="15"
+                Clicked="Category_Clicked"
+                CommandParameter="halloween"/>
+
+            <!-- Animals Button -->
+            <Button
+                Text="ANIMALS"
+                BackgroundColor="#4ECDC4"
+                TextColor="White"
+                FontSize="22"
+                WidthRequest="200"
+                HeightRequest="50"
+                CornerRadius="15"
+                Clicked="Category_Clicked"
+                CommandParameter="animals"/>
+
+            <!-- Foods Button -->
+            <Button
+                Text="FOODS"
+                BackgroundColor="#FFD93D"
+                TextColor="White"
+                FontSize="22"
+                WidthRequest="200"
+                HeightRequest="50"
+                CornerRadius="15"
+                Clicked="Category_Clicked"
+                CommandParameter="foods"/>
+
+            <!-- Space Button -->
+            <Button
+                Text="SPACE"
+                BackgroundColor="#6C5CE7"
+                TextColor="White"
+                FontSize="22"
+                WidthRequest="200"
+                HeightRequest="50"
+                CornerRadius="15"
+                Clicked="Category_Clicked"
+                CommandParameter="space"/>
+
+            <!-- Technology Button -->
+            <Button
+                Text="TECHNOLOGY"
+                BackgroundColor="#00B894"
+                TextColor="White"
+                FontSize="22"
+                WidthRequest="200"
+                HeightRequest="50"
+                CornerRadius="15"
+                Clicked="Category_Clicked"
+                CommandParameter="technology"/>
+
+            <!-- Back Button -->
+            <Button
+                Text="BACK"
+                BackgroundColor="#95A5A6"
+                TextColor="White"
+                FontSize="18"
+                WidthRequest="200"
+                HeightRequest="30"
+                CornerRadius="10"
+                Margin="0, 20, 0, 0"
+                Clicked="Back_Clicked"/>
+        </VerticalStackLayout>
     </Grid>
     
 </ContentPage>

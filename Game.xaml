@@ -66,7 +66,21 @@
             VerticalOptions="Center"
             Margin="130,0,10,0"
             />
-
+        
+        <Label 
+            x:Name="lblCategory"
+            Grid.ColumnSpan="3"
+            Grid.Row="0"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            TextColor="Orange"
+            Text="{Binding CategoryText}"
+            FontFamily="OpenSansSemibold"
+            FontSize="22"
+            Margin="30,30,20,20"
+            ZIndex="10"
+            IsVisible="{Binding IsHintVisible}"/>
+        
         <!-- Spotlight -->
         <Label 
             x:Name="lblSpotlight"
@@ -84,7 +98,7 @@
             x:Name="lblHint"
             Grid.ColumnSpan="3"
             Grid.Row="1"
-            HorizontalOptions="Start"
+            HorizontalOptions="Center"
             VerticalOptions="Start"
             TextColor="White"
             Text="{Binding HintText}"
