@@ -3,121 +3,123 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hangman.MainPage"
              Shell.NavBarIsVisible="False">
-
-    <Grid RowDefinitions="*,*,*">
+    <Grid RowDefinitions="2*,4*,4*">
+        
         <Image
             Grid.Row="0"
             Grid.RowSpan="3"
-            Source="home.png"
+            Source="background.png"
             Aspect="AspectFill"
             HorizontalOptions="Center" />
 
-        <Button
-            Grid.Row="2"
-            x:Name="PlayButton"
-            Text="PLAY"
-            TextColor="#ED3251"
-            BackgroundColor="LightGray"
-            BorderColor="White"
-            FontSize="35"
-            Padding="15, 10, 15, 10"
-            Margin="0, 0, 0, 100"
-            CharacterSpacing="1"
-            FontFamily="Halloween"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Clicked="PlayButton_Clicked" />
-
-        <VerticalStackLayout
-            x:Name="CategorySelection"
+        <Label
             Grid.Row="1"
-            Grid.RowSpan="2"
-            IsVisible="False"
+            Text="WELCOME TO HANGMAN"
+            FontFamily="Halloween"
+            FontSize="50"
+            TextColor="White"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            HorizontalTextAlignment="Center"
+            Margin="0, -30, 0, 0"/>
+
+        <VerticalStackLayout 
+            Grid.Row="2"
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            Spacing="15"
-            Margin="0, 0, 0, 50">
+            Spacing="20"
+            Margin="0, -50, 0, 0">
 
             <Label
-                Text="SELECT CATEGORY"
+                Text="Select Category:"
                 FontAttributes="Bold"
                 TextColor="White"
-                FontSize="30"
-                HorizontalOptions="Center"
-                Margin="0, 30, 0, 20"/>
-
-            <!-- Halloween Button -->
-            <Button
-                Text="HALLOWEEN"
-                BackgroundColor="#FF6B35"
-                TextColor="White"
-                FontSize="22"
-                WidthRequest="200"
-                HeightRequest="50"
-                CornerRadius="15"
-                Clicked="Category_Clicked"
-                CommandParameter="halloween"/>
-
-            <!-- Animals Button -->
-            <Button
-                Text="ANIMALS"
-                BackgroundColor="#4ECDC4"
-                TextColor="White"
-                FontSize="22"
-                WidthRequest="200"
-                HeightRequest="50"
-                CornerRadius="15"
-                Clicked="Category_Clicked"
-                CommandParameter="animals"/>
-
-            <!-- Foods Button -->
-            <Button
-                Text="FOODS"
-                BackgroundColor="#FFD93D"
-                TextColor="White"
-                FontSize="22"
-                WidthRequest="200"
-                HeightRequest="50"
-                CornerRadius="15"
-                Clicked="Category_Clicked"
-                CommandParameter="foods"/>
-
-            <!-- Space Button -->
-            <Button
-                Text="SPACE"
-                BackgroundColor="#6C5CE7"
-                TextColor="White"
-                FontSize="22"
-                WidthRequest="200"
-                HeightRequest="50"
-                CornerRadius="15"
-                Clicked="Category_Clicked"
-                CommandParameter="space"/>
-
-            <!-- Technology Button -->
-            <Button
-                Text="TECHNOLOGY"
-                BackgroundColor="#00B894"
-                TextColor="White"
-                FontSize="22"
-                WidthRequest="200"
-                HeightRequest="50"
-                CornerRadius="15"
-                Clicked="Category_Clicked"
-                CommandParameter="technology"/>
-
-            <!-- Back Button -->
-            <Button
-                Text="BACK"
-                BackgroundColor="#95A5A6"
-                TextColor="White"
                 FontSize="18"
-                WidthRequest="200"
-                HeightRequest="30"
-                CornerRadius="10"
-                Margin="0, 20, 0, 0"
-                Clicked="Back_Clicked"/>
+                HorizontalOptions="Center"
+                Margin="0, 20, 0, 0"/>
+
+            <Grid 
+                RowDefinitions="Auto, Auto, Auto"
+                ColumnDefinitions="*, *"
+                ColumnSpacing="5"
+                RowSpacing="10"
+                HorizontalOptions="Center">
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="HALLOWEEN"
+                    BackgroundColor="#FF6B35"
+                    TextColor="White"
+                    FontSize="16"
+                    FontFamily="Halloween"
+                    WidthRequest="285"
+                    HeightRequest="20"
+                    CornerRadius="12"
+                    Clicked="Category_Clicked"
+                    CommandParameter="words"/>
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="ANIMALS"
+                    BackgroundColor="#4ECDC4"
+                    TextColor="White"
+                    FontSize="16"
+                    FontFamily="Halloween"
+                    WidthRequest="140"
+                    HeightRequest="20"
+                    CornerRadius="12"
+                    Clicked="Category_Clicked"
+                    CommandParameter="animals"/>
+
+                <!-- Row 2 -->
+                <!-- Foods Button -->
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="FOODS"
+                    BackgroundColor="#FFDB58"
+                    TextColor="White"
+                    FontSize="16"
+                    FontFamily="Halloween"
+                    WidthRequest="140"
+                    HeightRequest="20"
+                    CornerRadius="12"
+                    Clicked="Category_Clicked"
+                    CommandParameter="foods"/>
+
+                <!-- Space Button -->
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="SPACE"
+                    BackgroundColor="#6C5CE7"
+                    TextColor="White"
+                    FontSize="16"
+                    FontFamily="Halloween"
+                    WidthRequest="140"
+                    HeightRequest="20"
+                    CornerRadius="12"
+                    Clicked="Category_Clicked"
+                    CommandParameter="space"/>
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="TECHNOLOGY"
+                    BackgroundColor="#00B894"
+                    TextColor="White"
+                    FontSize="16"
+                    FontFamily="Halloween"
+                    WidthRequest="140"
+                    HeightRequest="20"
+                    CornerRadius="12"
+                    HorizontalOptions="Center"
+                    Clicked="Category_Clicked"
+                    CommandParameter="technology"/>
+            </Grid>
         </VerticalStackLayout>
     </Grid>
-    
 </ContentPage>

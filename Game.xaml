@@ -14,7 +14,7 @@
         Source="background.png"
         Aspect="AspectFill"
         ZIndex="0"/>
-        
+
         <!-- Tree -->
         <Image
             Grid.Row="0"
@@ -52,7 +52,7 @@
          ZIndex="2"
          HorizontalOptions="End"
          VerticalOptions="Start"
-         Margin="0,14,15,0"/> 
+         Margin="0,14,15,0"/>
 
         <!-- Hangman -->
         <Image 
@@ -66,21 +66,22 @@
             VerticalOptions="Center"
             Margin="130,0,10,0"
             />
-        
+
+        <!-- Category Label -->
         <Label 
             x:Name="lblCategory"
             Grid.ColumnSpan="3"
             Grid.Row="0"
             HorizontalOptions="Start"
             VerticalOptions="Start"
-            TextColor="Orange"
+            TextColor="White"
             Text="{Binding CategoryText}"
             FontFamily="OpenSansSemibold"
-            FontSize="22"
-            Margin="30,30,20,20"
+            FontSize="15"
+            Margin="10,15,20,20"
             ZIndex="10"
             IsVisible="{Binding IsHintVisible}"/>
-        
+
         <!-- Spotlight -->
         <Label 
             x:Name="lblSpotlight"
@@ -92,8 +93,10 @@
             Text="{Binding Spotlight}"
             FontSize="35"
             Margin="0,0,0,10"
-            FontFamily="Halloween"/>
+            FontFamily="Halloween"
+            ZIndex="10"/>
 
+        <!-- HINT LABEL - FIXED! -->
         <Label 
             x:Name="lblHint"
             Grid.ColumnSpan="3"
@@ -103,14 +106,14 @@
             TextColor="White"
             Text="{Binding HintText}"
             FontFamily="OpenSansRegular"
-            FontSize="20"
-            Margin="40,75,20,20"
+            FontSize="18"
+            Margin="20,80,20,20"
             ZIndex="10"
             IsVisible="{Binding IsHintVisible}"
             LineBreakMode="WordWrap"
-            HorizontalTextAlignment="Center"
-            MaximumWidthRequest="300"/>
+            HorizontalTextAlignment="Center"/>
 
+        <!-- Win/Lose Message -->
         <Label 
             x:Name="lblMessage"
             Grid.ColumnSpan="3"
@@ -123,8 +126,9 @@
             FontSize="30"
             Margin="0,95,0,0"
             ZIndex="10"
-            IsVisible="{Binding IsWinVisible}"/> 
+            IsVisible="{Binding IsWinVisible}"/>
 
+        <!-- Keyboard -->
         <ScrollView 
             Grid.Row="2"
             Grid.ColumnSpan="3"
@@ -161,14 +165,15 @@
             </FlexLayout>
         </ScrollView>
 
-        <VerticalStackLayout
+        <!-- Game Control Buttons -->
+        <HorizontalStackLayout
         Grid.Row="2"
         Grid.ColumnSpan="3"
         IsVisible="{Binding IsWinVisible}"  
         HorizontalOptions="Center"
         VerticalOptions="Center" 
         Spacing="10"
-        Margin="0,20,0,60"> 
+        Margin="0,20,0,60">
 
             <Button
             Text="NEXT"
@@ -177,9 +182,9 @@
             BackgroundColor="#4CAF50"
             TextColor="White"
             FontFamily="Halloween"
-            FontSize="20"
+            FontSize="18"
             CharacterSpacing="1"
-            HeightRequest="50"
+            HeightRequest="30"
             WidthRequest="100"/>
 
             <Button
@@ -189,8 +194,8 @@
             BackgroundColor="#F44336"
             TextColor="White"
             FontFamily="Halloween"
-            FontSize="19"
-            HeightRequest="50"
+            FontSize="18"
+            HeightRequest="30"
             WidthRequest="100"/>
 
             <Button
@@ -200,11 +205,11 @@
             BackgroundColor="#9E9E9E"
             TextColor="White"
             FontFamily="Halloween"
-            FontSize="20"
+            FontSize="18"
             CharacterSpacing="2"
-            HeightRequest="50"
+            HeightRequest="30"
             WidthRequest="100"/>
-        </VerticalStackLayout>
+        </HorizontalStackLayout>
 
     </Grid>
 </ContentPage>
